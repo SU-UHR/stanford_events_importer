@@ -31,7 +31,7 @@ function stanford_events_importer_ctools_plugin_api($module = NULL, $api = NULL)
 function stanford_events_importer_node_info() {
   $items = array(
     'stanford_event' => array(
-      'name' => t('Stanford Event'),
+      'name' => t('Event'),
       'base' => 'node_content',
       'description' => t('An event pulled in from <a href="http://events.stanford.edu">events.stanford.edu</a>.'),
       'has_title' => '1',

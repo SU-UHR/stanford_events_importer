@@ -9,6 +9,29 @@
  */
 function stanford_events_importer_taxonomy_default_vocabularies() {
   return array(
+    'caw_event_category' => array(
+      'name' => 'Event Category',
+      'machine_name' => 'caw_event_category',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'stanford_event_audience' => array(
       'name' => 'Stanford Event Audience',
       'machine_name' => 'stanford_event_audience',
@@ -59,6 +82,29 @@ function stanford_events_importer_taxonomy_default_vocabularies() {
       'name' => 'Event Type',
       'machine_name' => 'stanford_event_type',
       'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'stanford_related_content' => array(
+      'name' => 'Related Content',
+      'machine_name' => 'stanford_related_content',
+      'description' => 'Used to place relevant items in the sidebar based on matching tags',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,

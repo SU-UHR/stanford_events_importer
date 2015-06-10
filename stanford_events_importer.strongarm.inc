@@ -193,6 +193,9 @@ function stanford_events_importer_strongarm() {
       'stanford_8_col_banner' => array(
         'custom_settings' => FALSE,
       ),
+      'stanford_view_card' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -203,10 +206,10 @@ function stanford_events_importer_strongarm() {
           'weight' => '1',
         ),
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '20',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '21',
         ),
       ),
       'display' => array(),
@@ -236,6 +239,13 @@ function stanford_events_importer_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__stanford_event_importer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_stanford_event';
+  $strongarm->value = '0';
+  $export['language_content_type_stanford_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -280,28 +290,28 @@ function stanford_events_importer_strongarm() {
     ),
     'additional_settings' => array(
       'region' => 'main',
-      'weight' => '14',
+      'weight' => '22',
       'has_required' => FALSE,
       'title' => 'Vertical tabs',
       'hidden' => 0,
     ),
     'actions' => array(
       'region' => 'main',
-      'weight' => '15',
+      'weight' => '23',
       'has_required' => FALSE,
       'title' => 'Save',
       'hidden' => 0,
     ),
     'body' => array(
       'region' => 'main',
-      'weight' => '5',
+      'weight' => '7',
       'has_required' => FALSE,
       'title' => 'Body',
       'hidden' => 0,
     ),
     'field_stanford_event_add_to_cal' => array(
       'region' => 'main',
-      'weight' => '11',
+      'weight' => '19',
       'has_required' => FALSE,
       'title' => 'Add to Calendar',
       'hidden' => 1,
@@ -311,21 +321,21 @@ function stanford_events_importer_strongarm() {
       'weight' => '3',
       'has_required' => FALSE,
       'title' => 'Admission',
-      'hidden' => 0,
+      'hidden' => 1,
     ),
     'field_stanford_event_audience' => array(
       'region' => 'main',
-      'weight' => '12',
+      'weight' => '17',
       'has_required' => FALSE,
-      'title' => 'Audience',
+      'title' => 'Event Audience',
       'hidden' => 0,
     ),
     'field_stanford_event_categories' => array(
       'region' => 'main',
-      'weight' => '13',
+      'weight' => '20',
       'has_required' => FALSE,
       'title' => 'Categories',
-      'hidden' => 0,
+      'hidden' => 1,
     ),
     'field_stanford_event_datetime' => array(
       'region' => 'main',
@@ -336,14 +346,14 @@ function stanford_events_importer_strongarm() {
     ),
     'field_stanford_event_email' => array(
       'region' => 'main',
-      'weight' => '7',
+      'weight' => '10',
       'has_required' => FALSE,
       'title' => 'Contact Email',
       'hidden' => 0,
     ),
     'field_stanford_event_image' => array(
       'region' => 'main',
-      'weight' => '4',
+      'weight' => '6',
       'has_required' => FALSE,
       'title' => 'Image',
       'hidden' => 0,
@@ -357,44 +367,86 @@ function stanford_events_importer_strongarm() {
     ),
     'field_stanford_event_phone' => array(
       'region' => 'main',
-      'weight' => '8',
+      'weight' => '11',
       'has_required' => FALSE,
       'title' => 'Contact Phone',
       'hidden' => 0,
     ),
     'field_stanford_event_sponsor' => array(
       'region' => 'main',
-      'weight' => '6',
+      'weight' => '9',
       'has_required' => FALSE,
       'title' => 'Event Sponsor',
       'hidden' => 0,
     ),
     'field_stanford_event_url' => array(
       'region' => 'main',
-      'weight' => '9',
+      'weight' => '12',
       'has_required' => FALSE,
       'title' => 'More Information',
       'hidden' => 0,
     ),
     'field_s_event_type' => array(
       'region' => 'main',
-      'weight' => '10',
+      'weight' => '15',
       'has_required' => FALSE,
       'title' => 'Event Type',
       'hidden' => 0,
     ),
     'field_s_event_map_link' => array(
       'region' => 'main',
-      'weight' => '6',
+      'weight' => '5',
       'has_required' => FALSE,
       'title' => 'Map Link',
       'hidden' => 0,
     ),
     'field_s_event_feed_type' => array(
       'region' => 'main',
-      'weight' => '14.9',
+      'weight' => '21',
       'has_required' => FALSE,
       'title' => 'Event Feed Type',
+      'hidden' => 1,
+    ),
+    'field_related_content' => array(
+      'region' => 'main',
+      'weight' => '18',
+      'has_required' => FALSE,
+      'title' => 'Related Content',
+      'hidden' => 0,
+    ),
+    'field_s_event_caw_course' => array(
+      'region' => 'main',
+      'weight' => '13',
+      'has_required' => FALSE,
+      'title' => 'Course',
+      'hidden' => 0,
+    ),
+    'field_s_event_fee' => array(
+      'region' => 'main',
+      'weight' => '4',
+      'has_required' => FALSE,
+      'title' => 'Fee',
+      'hidden' => 0,
+    ),
+    'field_s_event_registration' => array(
+      'region' => 'main',
+      'weight' => '8',
+      'has_required' => FALSE,
+      'title' => 'Registration',
+      'hidden' => 0,
+    ),
+    'field_event_categories' => array(
+      'region' => 'main',
+      'weight' => '16',
+      'has_required' => FALSE,
+      'title' => 'Event Categories',
+      'hidden' => 0,
+    ),
+    'field_s_event_caw_courseseries' => array(
+      'region' => 'main',
+      'weight' => '14',
+      'has_required' => FALSE,
+      'title' => 'Event Series',
       'hidden' => 0,
     ),
   );
